@@ -5,20 +5,20 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema catalogo_form
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema catalogo_form
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `catalogo_form` DEFAULT CHARACTER SET utf8 ;
+USE `catalogo_form` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`formulario`
+-- Table `catalogo_form`.`formulario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`formulario` (
-  `id` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `catalogo_form`.`formulario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(225) NULL,
   `cargo` VARCHAR(50) NULL,
   `email` VARCHAR(60) NULL,
@@ -31,41 +31,41 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`objetivo`
+-- Table `catalogo_form`.`objetivo`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`objetivo` (
+CREATE TABLE IF NOT EXISTS `catalogo_form`.`objetivo` (
   `formulario_id` INT NOT NULL,
   `valor` VARCHAR(45) NULL,
   INDEX `fk_objetivos_formulario_idx` (`formulario_id` ASC),
   CONSTRAINT `fk_objetivos_formulario`
     FOREIGN KEY (`formulario_id`)
-    REFERENCES `mydb`.`formulario` (`id`)
+    REFERENCES `catalogo_form`.`formulario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`experiencias_profissionais`
+-- Table `catalogo_form`.`experiencias_profissionais`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`experiencias_profissionais` (
+CREATE TABLE IF NOT EXISTS `catalogo_form`.`experiencias_profissionais` (
   `formulario_id` INT NOT NULL,
   `instituicao` VARCHAR(45) NULL,
-  `ano` INT(4) NULL,
+  `ano` VARCHAR(10) NULL,
   `atividades` TEXT(1000) NULL,
   INDEX `fk_experiencias_profissionais_formulario1_idx` (`formulario_id` ASC),
   CONSTRAINT `fk_experiencias_profissionais_formulario1`
     FOREIGN KEY (`formulario_id`)
-    REFERENCES `mydb`.`formulario` (`id`)
+    REFERENCES `catalogo_form`.`formulario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`formacao`
+-- Table `catalogo_form`.`formacao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`formacao` (
+CREATE TABLE IF NOT EXISTS `catalogo_form`.`formacao` (
   `formulario_id` INT NOT NULL,
   `inicio` INT(4) NULL,
   `fim` INT(4) NULL,
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`formacao` (
   INDEX `fk_formacao_formulario1_idx` (`formulario_id` ASC),
   CONSTRAINT `fk_formacao_formulario1`
     FOREIGN KEY (`formulario_id`)
-    REFERENCES `mydb`.`formulario` (`id`)
+    REFERENCES `catalogo_form`.`formulario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
