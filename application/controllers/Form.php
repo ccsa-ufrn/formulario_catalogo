@@ -57,6 +57,10 @@ class Form extends CI_Controller {
 		}
 		
 	}
+
+	public function listar_cadastros() {
+		$this->load->view('listagem');
+	}
 }
 
 ?>
