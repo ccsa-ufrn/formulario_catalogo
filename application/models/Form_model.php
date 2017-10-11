@@ -9,8 +9,6 @@ class Form_model extends CI_Model {
 	public $objetivo_tags;
 	public $interesses;
 	public $experiencias_profissionais;
-	
-
 }
 
 ?>
