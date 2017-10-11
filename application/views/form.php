@@ -13,7 +13,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js">
         </script>
         <script type="text/javascript" src="js/jquery.mask.min.js"/></script>
-        <script src="js/app.js"></script>   
+        <script src="js/app.js"></script> 
+         <link rel="stylesheet" href="style.css">  
 
         <script>
         jQuery(function($){
@@ -21,11 +22,6 @@
         });
         </script>                  
         
-       <style type="text/css">
-         li{
-              font-size: 18px;
-         }
-       </style>
 
     </head>
     <body>
@@ -36,28 +32,28 @@
               <div class="panel-heading">Formulário de inscrição</div>
               <div class="panel-body">
 
-                <form data-toggle="validator" role="form" method="post">
+                <form data-toggle="validator" role="form" method="post" action="receber.php">
 
                   <div class="form-group"> <!-- name field -->
                       <label class="control-label" for="inputName">Nome</label> 
-                      <input class="form-control" data-error="Preencha esse campo." id="inputName" placeholder="ex: Joao"  type="text" required />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputName" name="inputName" placeholder="ex: Joao"  type="text" required />
                       <div class="help-block with-errors"></div>
                   </div>
 
                   <div class="form-group"> <!-- email field -->
                     <label for="inputEmail" class="control-label">Email</label> 
-                    <input type="email" class="form-control" id="inputEmail" placeholder="ex: joao@gmail.com" required>
+                    <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="ex: joao@gmail.com" required>
                     <div class="help-block with-errors"></div>
                   </div>
 
                   <div class="form-group"> <!-- phone field -->
                     <label for="inputPhone" class="control-label">Telefone</label> 
-                    <input type="text" id="inputPhone" class="form-control" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" required>
+                    <input type="text" id="inputPhone" name="inputPhone" class="form-control" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" required>
                   </div>
 
                   <div class="form-group"> <!-- cargo field -->
                       <label class="control-label" for="inputCargo">Cargo</label>
-                      <input class="form-control" data-error="Preencha esse campo." id="inputCargo" placeholder="ex: Professor"  type="text" required />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputCargo" name="inputCargo" placeholder="ex: Professor"  type="text" required />
                       <div class="help-block with-errors"></div>
                   </div>
 
@@ -76,9 +72,13 @@
 
                   <div class="form-inline" id="formacaoField" > <!-- Formacao field -->
                       <label class="control-label" for="inputFormacao" id="teste">Formação</label><br>
-                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao" type="date" required placeholder="Data Inicio" />
-                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao1" type="date" required placeholder="Data Fim" />
-                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao2" type="text" required placeholder="Tipo" />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao" type="text" required placeholder="Ano Inicio" />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao1" type="text" required placeholder="Ano Fim" />
+                      <select class="form-control" id="inputFormacao2">
+                        <option>Doutorado</option>
+                        <option>Mestrado</option>
+                        <option>Graducao</option>
+                      </select>
                        <input class="form-control" data-error="Preencha esse campo." id="inputFormacao3" type="text" required placeholder="Curso" />
                       <button type="button" class="btn btn-primary btn-sm" id="btn1" onclick="addText()">ADD</button>
                       <ol id="list"></ol>
@@ -103,7 +103,7 @@
                       <div class="help-block with-errors"></div>
                   </div>
 
-                  <div class="form-group">
+                   <div class="form-group">
                       <button class="btn btn-primary" type="submit">
                           Submit
                       </button>
