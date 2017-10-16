@@ -14,6 +14,7 @@
         </script>
         <script type="text/javascript" src="js/jquery.mask.min.js"/></script>
         <script src="js/app.js"></script> 
+        <script src="js/add.js"></script> 
          <link rel="stylesheet" href="style.css">  
 
         <script>
@@ -29,7 +30,7 @@
         <div class="container">
             <div class="panel panel-primary">
 
-              <div class="panel-heading">Formulário de inscrição</div>
+              <div class="panel-heading">Formulário teste</div>
               <div class="panel-body">
 
                 <form data-toggle="validator" role="form" method="post" action="receber.php">
@@ -48,7 +49,7 @@
 
                   <div class="form-group"> <!-- phone field -->
                     <label for="inputPhone" class="control-label">Telefone</label> 
-                    <input type="text" id="inputPhone" name="inputPhone" class="form-control" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" required>
+                    <input type="text" id="inputPhone" class="form-control" name="inputPhone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" required>
                   </div>
 
                   <div class="form-group"> <!-- cargo field -->
@@ -60,19 +61,20 @@
                   <div class="form-group"> <!-- campo de Objetivo !-->
                       <label class="control-label">Objetivo</label>
                       <div class="checkbox">
-                        <label><input type="checkbox" value=""> Pesquisa </label>
+                        <label><input type="checkbox" name="objetivo[]" value=""> Pesquisa </label>
                       </div>
                       <div class="checkbox">
-                        <label><input type="checkbox" value=""> Ensino </label>
+                        <label><input type="checkbox" name="objetivo[]" value=""> Ensino </label>
                       </div>
                       <div class="checkbox">
-                      <label><input type="checkbox" value=""> Extensao </label>
+                      <label><input type="checkbox" name="objetivo[]" value=""> Extensao </label>
                       </div>
-              </div>
+                  </div>              
+
 
                   <div class="form-inline" id="formacaoField" > <!-- Formacao field -->
                       <label class="control-label" for="inputFormacao" id="teste">Formação</label><br>
-                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao" type="text" required placeholder="Ano Inicio" />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao"  type="text" required placeholder="Ano Inicio" />
                       <input class="form-control" data-error="Preencha esse campo." id="inputFormacao1" type="text" required placeholder="Ano Fim" />
                       <select class="form-control" id="inputFormacao2">
                         <option>Doutorado</option>
@@ -81,27 +83,44 @@
                       </select>
                        <input class="form-control" data-error="Preencha esse campo." id="inputFormacao3" type="text" required placeholder="Curso" />
                       <button type="button" class="btn btn-primary btn-sm" id="btn1" onclick="addText()">ADD</button>
-                      <ol id="list"></ol>
+                      <ul id="list"></ul>
                       <div class="help-block with-errors"></div>
                   </div>
 
-                   <div class="form-group"> <!-- Interesses field -->
-                      <label class="control-label" for="inputInteresse">Especialidades</label>
-                      <textarea class="form-control" data-error="Preencha esse campo." id="inputInteresse" required=""></textarea>
+                   <div class="form-inline" id="formacaoField" > <!-- Experiencia field -->
+                      <label class="control-label" for="inputExp" id="teste">Experiencia</label><br>
+                      <input class="form-control" data-error="Preencha esse campo." id="inputExp" type="text" required placeholder="Ano Inicio" />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputExp1" type="text" required placeholder="Ano Fim" />
+                      <select class="form-control" id="inputExp2">
+                        <option>Pesquisa</option>
+                        <option>Militancia</option>
+                      </select>
+                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="descricao"></textarea>
+                      <button type="button" class="btn btn-primary btn-sm" id="btn1" onclick="add()">ADD</button>
+                      <ul id="list1"></ul>
                       <div class="help-block with-errors"></div>
                   </div>
 
-                  <div class="form-group"> <!-- Interesses field -->
+
+                    <div class="form-group"> <!-- Interesses field -->
                       <label class="control-label" for="inputInteresse">Interesses</label>
-                      <textarea class="form-control" data-error="Preencha esse campo." id="inputInteresse" required=""></textarea>
+                      <textarea class="form-control" data-error="Preencha esse campo." id="inputInteresse" name="inputInteresse" required=""></textarea>
                       <div class="help-block with-errors"></div>
                   </div>
 
-                <div class="form-group"> <!-- Lattes field -->
-                      <label class="control-label" for="inputLattes">Lattes</label> 
-                      <input class="form-control" data-error="Preencha esse campo." id="inputLattes" placeholder="link"  type="text" required />
+                    <div class="form-group"> <!-- Especialidades field -->
+                      <label class="control-label" for="inputEspecialidades">Especialidades</label>
+                      <textarea class="form-control" data-error="Preencha esse campo." id="inputEspecialidades" name="inputEspecialidades" required=""></textarea>
                       <div class="help-block with-errors"></div>
                   </div>
+
+                  <div class="form-group"> <!-- lattes field -->
+                      <label class="control-label" for="inputLattes">Currículo Lattes e/ou ORCID</label> 
+                      <input class="form-control" data-error="Preencha esse campo." id="inputLattes" name="inputLattes" placeholder="ex: URL"  type="text" required />
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+
 
                    <div class="form-group">
                       <button class="btn btn-primary" type="submit">
