@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            Formulário
+            Formulário de Catálogo
         </title>
          <meta charset="utf-8">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
@@ -26,11 +26,19 @@
 
     </head>
     <body>
-        <br/>
-        <div class="container">
-            <div class="panel panel-primary">
 
-              <div class="panel-heading">Formulário teste</div>
+ 	  <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="ccsa.png" width="300" class="d-inline-block align-top" alt=""/>
+            </a>
+        </div>
+    </nav>
+        <br/>
+        <div class="container" >
+            <div class="panel panel-primary" >
+
+              <div class="panel-heading" style="background-color: #ed5548">Formulário Catálogo</div>
               <div class="panel-body">
 
                 <form data-toggle="validator" role="form" method="post" action="receber.php">
@@ -87,15 +95,9 @@
                       <div class="help-block with-errors"></div>
                   </div>
 
-                   <div class="form-inline" id="formacaoField" > <!-- Experiencia field -->
+                   <div class="form-group" id="expField" > <!-- Experiencia field -->
                       <label class="control-label" for="inputExp" id="teste">Experiencia</label><br>
-                      <input class="form-control" data-error="Preencha esse campo." id="inputExp" type="text" required placeholder="Ano Inicio" />
-                      <input class="form-control" data-error="Preencha esse campo." id="inputExp1" type="text" required placeholder="Ano Fim" />
-                      <select class="form-control" id="inputExp2">
-                        <option>Pesquisa</option>
-                        <option>Militancia</option>
-                      </select>
-                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="descricao"></textarea>
+                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="ATIVIDADES PROFISSIONAIS JÁ DESEMPENHADAS, EM PESQUISA OU EM MILITÂNCIA, PRINCIPALMENTE RELATIVAS AO ITEM ANTERIOR"></textarea>
                       <button type="button" class="btn btn-primary btn-sm" id="btn1" onclick="add()">ADD</button>
                       <ul id="list1"></ul>
                       <div class="help-block with-errors"></div>
@@ -123,7 +125,7 @@
 
 
                    <div class="form-group">
-                      <button class="btn btn-primary" type="submit">
+                      <button class="btn btn-primary" type="submit" style="background-color: #ed5548" >
                           Submit
                       </button>
                   </div>
