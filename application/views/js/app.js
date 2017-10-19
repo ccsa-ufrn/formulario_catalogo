@@ -9,6 +9,7 @@ function addText(){
     {
         
     var node=document.createElement("li");
+    	node.setAttribute("class", "list-group-item");
     var textnode=document.createTextNode(final);
         node.appendChild(textnode);
         console.log(row);
@@ -22,7 +23,7 @@ function addText(){
     var dataInicio=document.createElement("input");
         dataInicio.setAttribute("type", "hidden");
         dataInicio.setAttribute("id", "dataInicio"+row);
-        dataInicio.setAttribute("name", "dataInicio");
+        dataInicio.setAttribute("name", "dataInicio[]");
         dataInicio.setAttribute("value", input)
      document.getElementById('contentP'+row).appendChild(dataInicio);
      console.log(document.getElementById('dataInicio'+row).value);
@@ -30,7 +31,7 @@ function addText(){
      var dataFim=document.createElement("input");
         dataFim.setAttribute("type", "hidden");
         dataFim.setAttribute("id", "dataFim"+row);
-        dataFim.setAttribute("name", "dataFim");
+        dataFim.setAttribute("name", "dataFim[]");
         dataFim.setAttribute("value", input1)
      document.getElementById('contentP'+row).appendChild(dataFim);
      console.log(document.getElementById('dataFim'+row).value);
@@ -38,7 +39,7 @@ function addText(){
      var tipo=document.createElement("input");
         tipo.setAttribute("type", "hidden");
         tipo.setAttribute("id", "tipo"+row);
-        tipo.setAttribute("name", "tipo");
+        tipo.setAttribute("name", "tipo[]");
         tipo.setAttribute("value", input2)
      document.getElementById('contentP'+row).appendChild(tipo);
      console.log(document.getElementById('tipo'+row).value);
@@ -53,8 +54,8 @@ function addText(){
 
     var removeTask = document.createElement('input');
         removeTask.setAttribute('type', 'button');
-        removeTask.setAttribute("value", "Remove");
-        removeTask.setAttribute("class", "btn btn-primary btn-sm");
+        removeTask.setAttribute("value", "Remover");
+        removeTask.setAttribute("class", "btn btn-danger btn-sm");
         removeTask.setAttribute("id", "removeButton");
         removeTask.setAttribute("onClick", "deleterow("+ row +");");
 

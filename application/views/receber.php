@@ -3,16 +3,16 @@ $nome = $_POST['inputName'];
 
 $lattes = $_POST['inputLattes'];
 
+$objetivo = $_POST['objetivo'];
+
 $cursos = $_POST['curso'];
-$cursos = $_POST['dataInicio'];
-$cursos = $_POST['dataFim'];
-$cursos = $_POST['tipo'];
+$dataInicio = $_POST['dataInicio'];
+$dataFim = $_POST['dataFim'];
+$tipo = $_POST['tipo'];
 
-$cursos = $_POST['descricao'];
-$cursos = $_POST['dataInicioExp'];
-$cursos = $_POST['dataFimExp'];
-$cursos = $_POST['tipoExp'];
-
+$descricao = $_POST['descricao'];
+$desde = $_POST['desde'];
+$local = $_POST['local'];
 
 $intesse = $_POST['inputInteresse'];
 
@@ -27,20 +27,45 @@ $cargo = $_POST['inputCargo'];
 
 
 
-echo "Sua intesse: " . $intesse;
-echo "Sua especialidade: " . $inputEspecialidades;
-
-
-echo "Nome: " . $nome;
-echo "email: " . $email;
-echo "phone: " . $phone;
-echo "cargo: " . $cargo;
-echo "lattes" . $lattes;
-
-
 if (isset($_POST['curso'])) {
 	foreach ($cursos as $c) {
 		echo $c;
+	}
+}
+if (isset($_POST['dataInicio'])) {
+	foreach ($dataInicio as $d) {
+		echo $d;
+	}
+}
+if (isset($_POST['dataFim'])) {
+	foreach ($dataFim as $f) {
+		echo $f;
+	}
+}
+if (isset($_POST['tipo'])) {
+	foreach ($tipo as $t) {
+		echo $t;
+	}
+}
+
+if (isset($_POST['local'])) {
+	foreach ($local as $l) {
+		echo $l;
+	}
+}
+if (isset($_POST['desde'])) {
+	foreach ($desde as $dd) {
+		echo $dd;
+	}
+}
+if (isset($_POST['descricao'])) {
+	foreach ($descricao as $dc) {
+		echo $dc;
+	}
+}
+if (isset($_POST['objetivo'])) {
+	foreach ($objetivo as $o) {
+		echo $o;
 	}
 }
 

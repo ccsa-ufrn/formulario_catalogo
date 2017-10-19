@@ -19,9 +19,19 @@
 
         <script>
         jQuery(function($){
-        $("#inputPhone").mask("(99) 9999-9999");
+        $("#inputPhone").mask("(00) 0000-00009");
         });
-        </script>                  
+        </script>  
+				 <script>
+    function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+          campo.value = "";
+        }
+    }
+ </script>             
         
 
     </head>
@@ -36,10 +46,10 @@
     </nav>
         <br/>
         <div class="container" >
-            <div class="panel panel-primary" >
+            <div class="panel panel-primary"   >
 
               <div class="panel-heading" style="background-color: #ed5548">Formulário Catálogo</div>
-              <div class="panel-body">
+              <div class="panel-body" >
 
                 <form data-toggle="validator" role="form" method="post" action="receber.php">
 
@@ -69,37 +79,41 @@
                   <div class="form-group"> <!-- campo de Objetivo !-->
                       <label class="control-label">Objetivo</label>
                       <div class="checkbox">
-                        <label><input type="checkbox" name="objetivo[]" value=""> Pesquisa </label>
+                        <label><input type="checkbox" name="objetivo[]" value="Pesquisa"> Pesquisa </label>
                       </div>
                       <div class="checkbox">
-                        <label><input type="checkbox" name="objetivo[]" value=""> Ensino </label>
+                        <label><input type="checkbox" name="objetivo[]" value="Ensino"> Ensino </label>
                       </div>
                       <div class="checkbox">
-                      <label><input type="checkbox" name="objetivo[]" value=""> Extensao </label>
+                      <label><input type="checkbox" name="objetivo[]" value="Extensao"> Extensao </label>
                       </div>
                   </div>              
 
 
                   <div class="form-inline" id="formacaoField" > <!-- Formacao field -->
                       <label class="control-label" for="inputFormacao" id="teste">Formação</label><br>
-                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao"  type="text" required placeholder="Ano Inicio" />
-                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao1" type="text" required placeholder="Ano Fim" />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao" onkeyup="somenteNumeros(this)" type="text" required placeholder="Ano Inicio" maxlength="4" size="10" />
+                      <input class="form-control" data-error="Preencha esse campo." id="inputFormacao1" type="text" required placeholder="Ano Fim" maxlength="4" size="10" onkeyup="somenteNumeros(this)" />
                       <select class="form-control" id="inputFormacao2">
                         <option>Doutorado</option>
                         <option>Mestrado</option>
                         <option>Graducao</option>
                       </select>
                        <input class="form-control" data-error="Preencha esse campo." id="inputFormacao3" type="text" required placeholder="Curso" />
-                      <button type="button" class="btn btn-primary btn-sm" id="btn1" onclick="addText()">ADD</button>
-                      <ul id="list"></ul>
+                      <button type="button" class="btn btn-success btn-sm" id="btn1" onclick="addText()">
+                      <span class="glyphicon glyphicon-plus-sign"></span>Adicionar</button>
+                      <ul class="list-group" id="list"></ul>
                       <div class="help-block with-errors"></div>
                   </div>
 
-                   <div class="form-group" id="expField" > <!-- Experiencia field -->
-                      <label class="control-label" for="inputExp" id="teste">Experiencia</label><br>
-                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="ATIVIDADES PROFISSIONAIS JÁ DESEMPENHADAS, EM PESQUISA OU EM MILITÂNCIA, PRINCIPALMENTE RELATIVAS AO ITEM ANTERIOR"></textarea>
-                      <button type="button" class="btn btn-primary btn-sm" id="btn1" onclick="add()">ADD</button>
-                      <ul id="list1"></ul>
+                   <div class="form-inline" id="expField" > <!-- Experiencia field -->
+                      <label class="control-label" for="inputExpLocal" id="teste">Experiencia</label><br>
+                      <input class="form-control" data-error="Preencha esse campo." id="inputExpLocal" name="inputExpLocal" type="text" required placeholder="Local" />
+                       <input class="form-control" data-error="Preencha esse campo." id="inputExpDesde" name="inputExpDesde" onkeyup="somenteNumeros(this)" type="text" required placeholder="Desde(ex: 2015)" maxlength="4" size="15" />
+                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="ATIVIDADES PROFISSIONAIS JÁ DESEMPENHADAS, EM PESQUISA OU EM MILITÂNCIA, PRINCIPALMENTE RELATIVAS AO ITEM ANTERIOR" cols="75" ></textarea>
+                      <button type="button" class="btn btn-success btn-sm" id="btn1" onclick="add()">
+                      <span class="glyphicon glyphicon-plus-sign"></span>Adicionar</button>
+                      <ul class="list-group" id="list1"></ul>
                       <div class="help-block with-errors"></div>
                   </div>
 
