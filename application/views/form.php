@@ -126,7 +126,7 @@
 
                     <div class="form-group"> <!-- Especialidades field -->
                       <label class="control-label" for="inputEspecialidades">Especialidades</label>
-                      <textarea class="form-control" data-error="Preencha esse campo." id="inputEspecialidades" name="inputEspecialidades" required=""></textarea>
+                      <textarea class="form-control" data-error="Preencha esse campo." name="especialidades" id="inputEspecialidades" name="inputEspecialidades" required=""></textarea>
                       <div class="help-block with-errors"></div>
                   </div>
 

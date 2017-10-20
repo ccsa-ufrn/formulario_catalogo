@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `catalogo_form`.`formulario` (
   `telefone` VARCHAR(15) NULL,
   `curriculo_link` VARCHAR(45) NULL,
   `interesses` TEXT(1000) NULL,
+  `especialidades` TEXT(1000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

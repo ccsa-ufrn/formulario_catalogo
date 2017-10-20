@@ -31,6 +31,7 @@ class Form extends CI_Controller {
 			$tipos_objetivo = $this->input->post('tipo'); // É um array
 			// $objetivo = $this->input->post('objetivo');
 			$interesses = $this->input->post('interesses');
+			$especialidades = $this->input->post('especialidades');
 
 			$exp_intituicoes = $this->input->post('experiencia_instituicao'); // É um array
 			$exp_anos = $this->input->post('experiencia_ano'); // É um array
@@ -43,7 +44,7 @@ class Form extends CI_Controller {
 
 			$curriculo = $this->input->post('curriculo');
 
-			$this->db->query("INSERT INTO `catalogo_form`.`formulario` (`nome`, `cargo`, `email`, `telefone`, `curriculo_link`, `interesses`) VALUES ('$nome', '$cargo', '$email', '$telefone', '$curriculo', '$interesses');");
+			$this->db->query("INSERT INTO `catalogo_form`.`formulario` (`nome`, `cargo`, `email`, `telefone`, `curriculo_link`, `interesses`, `especialidades`) VALUES ('$nome', '$cargo', '$email', '$telefone', '$curriculo', '$interesses', '$especialidades');");
 			$id = $this->db->insert_id();
 			for ($i = 0; $i < count($exp_intituicoes); $i++) {
 				$this->db->query("INSERT INTO `catalogo_form`.`experiencias_profissionais` (`formulario_id`, `instituicao`, `ano`, `atividades`) VALUES ($id, '$exp_intituicoes[$i]', '$exp_anos[$i]', '$exp_atividades[$i]');");
