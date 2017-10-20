@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS `catalogo_form`.`formulario` (
   `cargo` VARCHAR(50) NULL,
   `email` VARCHAR(60) NULL,
   `telefone` VARCHAR(15) NULL,
-  `objetivo` TEXT(1000) NULL,
   `curriculo_link` VARCHAR(45) NULL,
   `interesses` TEXT(1000) NULL,
   PRIMARY KEY (`id`))

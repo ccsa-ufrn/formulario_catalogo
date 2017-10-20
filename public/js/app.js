@@ -23,7 +23,7 @@ function addText(){
     var dataInicio=document.createElement("input");
         dataInicio.setAttribute("type", "hidden");
         dataInicio.setAttribute("id", "dataInicio"+row);
-        dataInicio.setAttribute("name", "dataInicio[]");
+        dataInicio.setAttribute("name", "formacao_inicio[]");
         dataInicio.setAttribute("value", input)
      document.getElementById('contentP'+row).appendChild(dataInicio);
      console.log(document.getElementById('dataInicio'+row).value);
@@ -31,7 +31,7 @@ function addText(){
      var dataFim=document.createElement("input");
         dataFim.setAttribute("type", "hidden");
         dataFim.setAttribute("id", "dataFim"+row);
-        dataFim.setAttribute("name", "dataFim[]");
+        dataFim.setAttribute("name", "formacao_termino[]");
         dataFim.setAttribute("value", input1)
      document.getElementById('contentP'+row).appendChild(dataFim);
      console.log(document.getElementById('dataFim'+row).value);
@@ -39,7 +39,7 @@ function addText(){
      var tipo=document.createElement("input");
         tipo.setAttribute("type", "hidden");
         tipo.setAttribute("id", "tipo"+row);
-        tipo.setAttribute("name", "tipo[]");
+        tipo.setAttribute("name", "formacao_titulo[]");
         tipo.setAttribute("value", input2)
      document.getElementById('contentP'+row).appendChild(tipo);
      console.log(document.getElementById('tipo'+row).value);

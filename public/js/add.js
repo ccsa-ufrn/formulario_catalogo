@@ -23,7 +23,7 @@ function add(){
  	var desde=document.createElement("input");
         desde.setAttribute("type", "hidden");
         desde.setAttribute("id", "desde"+row1);
-        desde.setAttribute("name", "desde[]");
+        desde.setAttribute("name", "experiencia_ano[]");
         desde.setAttribute("value", input2)
      document.getElementById('linha'+row1).appendChild(desde);
      console.log(document.getElementById('desde'+row1).value);
@@ -31,7 +31,7 @@ function add(){
      var local=document.createElement("input");
         local.setAttribute("type", "hidden");
         local.setAttribute("id", "tipo"+row1);
-        local.setAttribute("name", "local[]");
+        local.setAttribute("name", "experiencia_instituicao[]");
         local.setAttribute("value", input1)
      document.getElementById('linha'+row1).appendChild(local);
      console.log(document.getElementById('tipo'+row1).value);
@@ -40,7 +40,7 @@ function add(){
         curso.setAttribute("type", "hidden");
         curso.setAttribute("id", "descricao"+row1);
         curso.setAttribute("value", input3)
-        curso.setAttribute("name", "descricao[]");
+        curso.setAttribute("name", "experiencia_atividades[]");
      document.getElementById('linha'+row1).appendChild(curso);
      console.log(document.getElementById('descricao'+row1).value);
 
