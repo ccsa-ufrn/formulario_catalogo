@@ -15,7 +15,7 @@
         <script type="text/javascript" src="public/js/jquery.mask.min.js"/></script>
         <script src="public/js/app.js"></script> 
         <script src="public/js/add.js"></script> 
-         <link rel="stylesheet" href="style.css">  
+         <link rel="stylesheet" href="public/style.css">  
 
         <script>
         jQuery(function($){
@@ -78,6 +78,7 @@
 
                   <div class="form-group"> <!-- campo de Objetivo !-->
                       <label class="control-label">Objetivo</label>
+                      <span style="color: gray">(é possível marcar mais de uma opção)</span>
                       <div class="checkbox">
                         <label><input type="checkbox" name="tipo[]" value="Pesquisa"> Pesquisa </label>
                       </div>
@@ -110,7 +111,7 @@
                       <label class="control-label" for="inputExpLocal" id="teste">Experiencia</label><br>
                       <input class="form-control" data-error="Preencha esse campo." id="inputExpLocal" name="inputExpLocal" type="text" required placeholder="Local" />
                        <input class="form-control" data-error="Preencha esse campo." id="inputExpDesde" name="inputExpDesde" onkeyup="somenteNumeros(this)" type="text" required placeholder="Desde(ex: 2015)" maxlength="4" size="15" />
-                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="ATIVIDADES PROFISSIONAIS JÁ DESEMPENHADAS, EM PESQUISA OU EM MILITÂNCIA, PRINCIPALMENTE RELATIVAS AO ITEM ANTERIOR" cols="75" ></textarea>
+                       <textarea class="form-control" data-error="Preencha esse campo." id="inputExp3" type="text" required placeholder="Atividades profissionais já desempenhadas, acadêmicas ou demais, principalmente relativas ao item anterior" cols="75" ></textarea>
                       <button type="button" class="btn btn-success btn-sm" id="btn1" onclick="add()">
                       <span class="glyphicon glyphicon-plus-sign"></span>Adicionar</button>
                       <ul class="list-group" id="list1"></ul>
