@@ -70,9 +70,13 @@
                     <input type="text" id="inputPhone" class="form-control" name="telefone" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4,5}" required>
                   </div>
 
-                  <div class="form-group"> <!-- cargo field -->
-                      <label class="control-label" for="inputCargo">Cargo</label>
-                      <input class="form-control" data-error="Preencha esse campo." id="inputCargo" name="cargo" placeholder="ex: Professor"  type="text" required />
+                  <div class="form-inline"> <!-- cargo field -->
+                      <label class="control-label" for="inputCargo">Cargo</label> <br>
+                        <select class="form-control" name="tipoServidor">
+                        <option>Servidor(a) Docente</option>
+                        <option>Servidor(a) Técnico(a)-Administrativo(a)</option>
+                       </select>
+                      <input class="form-control" data-error="Preencha esse campo." id="inputCargo" name="cargo" placeholder="ex: Professor"  type="text" required size="40" />
                       <div class="help-block with-errors"></div>
                   </div>
 
@@ -125,11 +129,7 @@
                       <div class="help-block with-errors"></div>
                   </div>
 
-                    <div class="form-group"> <!-- Especialidades field -->
-                      <label class="control-label" for="inputEspecialidades">Especialidades</label>
-                      <textarea class="form-control" data-error="Preencha esse campo." name="especialidades" id="inputEspecialidades" name="inputEspecialidades" required=""></textarea>
-                      <div class="help-block with-errors"></div>
-                  </div>
+                 
 
                   <div class="form-group"> <!-- lattes field -->
                       <label class="control-label" for="inputLattes">Currículo Lattes e/ou ORCID</label> 

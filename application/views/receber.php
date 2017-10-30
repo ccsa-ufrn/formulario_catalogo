@@ -16,13 +16,15 @@ $local = $_POST['local'];
 
 $intesse = $_POST['inputInteresse'];
 
-$especialidade = $_POST['inputEspecialidades'];
 
 $email = $_POST['inputEmail'];
 
 $phone = $_POST['inputPhone'];
 
 $cargo = $_POST['inputCargo'];
+
+$tipoServidor = $_POST['tipoServidor'];
+
 
 
 
