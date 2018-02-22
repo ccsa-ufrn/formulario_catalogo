@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<center>
 	 <b>CENTRO DE CIÊNCIAS SOCIAIS APLICADAS (CCSA/UFRN)</b>
 	</center><br>
-	<table class="pure-table pure-table-bordered" width="100%">
+	<table class="pure-table pure-table-bordered principal" width="100%">
 		<thead>
 			<tr>
 				<td colspan=2><b>RELATÓRIO DE FORMULÁRIO ELETRÔNICO</b></td>
@@ -34,37 +34,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</table>
 
 	<h4>Resultados retornados</h4>
-	Formulário nº 1
-	<table class="pure-table pure-table-bordered" width="100%">
+        <?php foreach($users as $user): ?>
+        <table class="pure-table pure-table-bordered <?php echo $user['id']; ?>" width="100%">
 		<thead>
 			<tr>
-				<td colspan=2><b>Informações pessoais</b></td>
+                        <td colspan=2><b>Informações pessoais</b>
+                        <button type="button" onclick='removeForm("<?php echo $user['id']; ?>")'>Esconder</button>
+                        <button type="button" onclick='removeBut("<?php echo $user['id']; ?>")'>Esconder todos</button>
+                        </td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td width="20%">Nome</td>
-				<td>Francisco Maradona de Freitas Morais</td>
+                                <td><?php echo $user['name']; ?></td>
 			</tr>
 			<tr>
 				<td>Cargo</td>
-				<td>Estudante</td>
+                                <td><?php echo $user['position']; ?></td>
 			</tr>
 			<tr>
 				<td>E-mail</td>
-				<td>maradona.morais@hotmail.com</td>
+                                <td><?php echo $user['email']; ?></td>
 			</tr>
 			<tr>
 				<td>Telefone</td>
-				<td>(84) 9 6666-6666</td>
+				<td><?php echo $user['phone']; ?></td>
 			</tr>
 			<tr>
 				<td>Currículo Lattes/ORCID</td>
-				<td>http://lattes.cnpq.br/7025704695290064</td>
+				<td><?php echo $user['resume_link']; ?></td>
 			</tr>
 		</tbody>
 	</table>
-	<table class="pure-table pure-table-bordered" width="100%">
+        <table class="pure-table pure-table-bordered <?php echo $user['id']; ?>" width="100%">
 		<thead>
 			<tr>
 				<td colspan=2><b>Objetivo</b></td>
@@ -72,20 +75,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</thead>
 		<tbody>
 			<tr>
-				<td>Tipos de objetivo</td>
+				<td>Objetivos</td>
 				<td>
-					<input type="checkbox" checked disabled> Ensino 
-					<input type="checkbox" checked disabled> Pesquisa 
-					<input type="checkbox" disabled> Extensão 
+                                    <?php foreach($user['objectives'] as $objective): ?>
+                                        <?php echo $objective['value']?><span> </span>
+                                    <?php endforeach; ?>
 				</td>
-			</tr>
-			<tr>
-				<td width="20%">Objetivo</td>
-				<td><p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus neque, sollicitudin ut dolor sed, aliquam finibus tortor. Vivamus et nisl vel orci posuere bibendum et vel leo. Nam faucibus nisi fringilla convallis interdum. Cras nec faucibus mauris. Pellentesque laoreet, lorem aliquam ultricies venenatis, arcu dolor aliquam lacus, eu porta lorem felis a risus. Mauris condimentum mattis eros, sit amet vulputate nulla molestie sit amet. Nulla sodales ligula quis metus sagittis imperdiet. Mauris eu rhoncus metus.</p></td>
 			</tr>
 		</tbody>
 	</table>
-	<table class="pure-table pure-table-bordered" width="100%">
+	<table class="pure-table pure-table-bordered <?php echo $user['id']; ?>" width="100%">
 		<thead>
 			<tr>
 				<td><b>Interesses</b></td>
@@ -93,49 +92,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</thead>
 		<tbody>
 			<tr>
-				<td><p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus neque, sollicitudin ut dolor sed, aliquam finibus tortor. Vivamus et nisl vel orci posuere bibendum et vel leo. Nam faucibus nisi fringilla convallis interdum. Cras nec faucibus mauris. Pellentesque laoreet, lorem aliquam ultricies venenatis, arcu dolor aliquam lacus, eu porta lorem felis a risus. Mauris condimentum mattis eros, sit amet vulputate nulla molestie sit amet. Nulla sodales ligula quis metus sagittis imperdiet. Mauris eu rhoncus metus.</p></td>
+                        <td><p style="text-align: justify;"><?php echo $user['interests']; ?></p></td>
 			</tr>
 		</tbody>
 	</table>
-	<table class="pure-table pure-table-bordered" width="100%">
+	<table class="pure-table pure-table-bordered <?php echo $user['id']; ?>" width="100%">
 		<thead>
 			<tr>
 				<td><b>Experiência Profissional</b></td>
 			</tr>
 		</thead>
 		<tbody>
+                        <?php foreach($user['pro_expertises'] as $professional_expertise): ?>
 			<tr>
-				<td>Universidade Federal do Rio Grande do Norte desde 2016<br>
-				Atividades/Funções desenvolvidas
+                        <td><?php echo $professional_expertise['institution'] + "desde" + $professional_expertise['year']; ?><br>
+                        <strong>Atividades/Funções desenvolvidas</strong>: <?php echo $professional_expertise['ativities']; ?>
 				</td>
 			</tr>
-			<tr>
-				<td>Universidade Federal do Rio Grande do Norte desde 2016<br>
-				Atividades/Funções desenvolvidas
-				</td>
-			</tr>
+                        <?php endforeach; ?>
 		</tbody>
 	</table>
-	<table class="pure-table pure-table-bordered" width="100%">
+	<table class="pure-table pure-table-bordered <?php echo $user['id']; ?>" width="100%">
 		<thead>
 			<tr>
 				<td><b>Formação Acadêmica</b></td>
 			</tr>
 		</thead>
 		<tbody>
+                    <?php foreach($user['formations'] as $formation): ?>
 			<tr>
-				<td>2016-2017: Graduação em [Curso se houver]</td>
+                        <td><?php echo $formation['beginning'];?>-<?php echo $formation['end'];?>: <?php echo $formation['title'];?> no curso de <?php echo $formation['course'];?></td>
 			</tr>
-			<tr>
-				<td>2016-2017: Mestrado em [Curso se houver]</td>
-			</tr>
-			<tr>
-				<td>2016-2017: Especialização em [Curso se houver]</td>
-			</tr>
-			<tr>
-				<td>2016-2017: Doutorado em [Curso se houver]</td>
-			</tr>
-		</tbody>
+                    <?php endforeach; ?>
 	</table>
+        <p class="<?php echo $user['id']; ?>"> </p>
+        <?php endforeach; ?>
+<script type="text/javascript">
+    function removeForm(formClass) {
+        var elem = document.getElementsByClassName(formClass);
+        for(x = 0; x < elem.length; x++){
+            elem[x].style.display = 'none';
+        }
+    } 
+    function removeBut(formClass) {
+        var elem = document.getElementsByClassName("pure-table");
+        var className = " " + formClass + " ";
+        for(x = 0; x < elem.length; x++){
+            if ( !((" " + elem[x].className + " ").replace(/[\n\t\r]/g, " ").indexOf(className) > -1) && !((" " + elem[x].className + " ").replace(/[\n\t\r]/g, " ").indexOf(" principal ") > -1)) {
+                elem[x].style.display = 'none';
+            }
+        }
+    }
+</script>
 </body>
 </html>
